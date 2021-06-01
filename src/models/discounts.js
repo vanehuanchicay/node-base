@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose');
 
 const DiscountsSchema = Schema({
   brand: { type: String },
@@ -6,4 +6,4 @@ const DiscountsSchema = Schema({
   discount: { type: Number },
 });
 
-module.exports = model("Discounts", DiscountsSchema);
+module.exports = model('Discounts', DiscountsSchema);

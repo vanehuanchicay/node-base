@@ -1,5 +1,5 @@
-const express = require("express");
-const { dbConnection } = require("../database/config");
+const express = require('express');
+const { dbConnection } = require('../database/config');
 
 class Server {
   constructor() {
@@ -14,11 +14,11 @@ class Server {
     await dbConnection();
 }
   middleware() {
-    this.app.use(express.json()); // lectura y parse body
+    this.app.use(express.json()); 
   }
   routes() {
-    this.app.use("/api/catalogs", require("../routes/products"));
-    this.app.use("/api/discounts", require("../routes/discounts"));
+    this.app.use('/api/products-catalog', require('../routes/products'));
+    this.app.use('/api/discounts', require('../routes/discounts'));
   }
 
   listen() {
