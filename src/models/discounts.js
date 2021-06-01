@@ -6,4 +6,4 @@ const DiscountsSchema = Schema({
   discount: { type: Number },
 });
 
-module.exports = model("Discount", DiscountsSchema);
+module.exports = model("Discounts", DiscountsSchema);

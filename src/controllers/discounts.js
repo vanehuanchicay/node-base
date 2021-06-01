@@ -1,14 +1,12 @@
 const { response, request } = require("express");
-const Discount = require("../models/discounts");
+const Discounts = require("../models/discounts");
 
 const discountsGet = async (req, res = response) => {
-  const body = req.body;
-  const discount = new Discount(body);
-  await discount.save();
+  const discounts = await Discounts.find();
+  console.log(discounts);
   res.json({
-    discount,
+    discounts,
   });
 };
 
 module.exports = discountsGet;
-

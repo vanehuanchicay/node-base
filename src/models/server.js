@@ -18,13 +18,11 @@ class Server {
   }
   routes() {
     this.app.use("/api/catalogs", require("../routes/products"));
-    this.app.use("/api/update-cart", require("../routes/cartItems"));
+    this.app.use("/api/discounts", require("../routes/discounts"));
   }
 
   listen() {
-    this.app.listen(this.PORT, () => {
-      console.log("Servidor corriendo en puerto", this.PORT);
-    });
+    this.app.listen(this.PORT);
   }
 }
 

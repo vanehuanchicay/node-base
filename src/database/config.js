@@ -1,19 +1,12 @@
 const mongoose = require("mongoose");
 
-const dbConnection = async () => {
-  try {
-    await mongoose.connect("mongodb://localhost:27017/walmart", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
-
-    console.log("Base de datos online");
-  } catch (error) {
-    console.log(error);
-    throw new Error("Error a la hora de iniciar la base de datos");
-  }
-};
+const dbConnection =  () => mongoose.connect('mongodb://brandDiscountsUser:brandDiscountsPassword@127.0.0.1:27017/desafio_walmart?authSource=admin',
+{ useNewUrlParser: true,
+   useUnifiedTopology: true,
+   useFindAndModify: false,
+  useCreateIndex: true
+})
 
 module.exports = {
-  dbConnection,
+  dbConnection
 };
